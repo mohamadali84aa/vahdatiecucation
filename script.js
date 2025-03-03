@@ -10,18 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Hamburger Menu Toggle
+    const header = document.querySelector('.header');
     const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
 
     menuBtn.addEventListener('click', () => {
+        header.classList.toggle('open');
         menuBtn.classList.toggle('open');
-        navLinks.classList.toggle('open');
     });
 
     // Close menu when a link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
+            header.classList.remove('open');
             menuBtn.classList.remove('open');
         });
     });
