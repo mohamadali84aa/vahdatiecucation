@@ -42,10 +42,10 @@ body {
     transform: translateX(-50%);
     width: calc(100vw - 48px);
     max-width: 1200px;
-    background: rgba(255, 255, 255, 0.2); /* Frosted glass with slight pink tint */
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
     backdrop-filter: blur(12px);
     border-radius: 28px;
-    z-index: 2; /* Above particles but below hero content */
+    z-index: 2;
     padding: 10px 20px;
 }
 
@@ -55,10 +55,19 @@ body {
     align-items: center;
 }
 
-.logo img {
-    height: 40px; /* Adjust based on your logo size */
+/* Site Name Styles */
+.site-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00bfff; /* Blue color for the site name */
+    text-decoration: none;
 }
 
+.site-name:hover {
+    color: #87cefa; /* Lighter blue on hover */
+}
+
+/* Navigation Links */
 .nav-links {
     display: flex;
     gap: 30px;
@@ -132,7 +141,7 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(0, 0, 0, 0.6); /* Match header background */
         backdrop-filter: blur(12px);
         border-radius: 0 0 28px 28px;
         padding: 20px;
