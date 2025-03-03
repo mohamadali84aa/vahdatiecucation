@@ -44,18 +44,26 @@ body {
     max-width: 1200px;
     background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
     backdrop-filter: blur(12px);
-    border-radius: 28px;
+    border-radius: 28px; /* Highly rounded (oval-like) initially */
     z-index: 2;
     padding: 10px 20px;
+    transition: height 0.3s ease, border-radius 0.3s ease;
+    height: 60px; /* Initial height */
+    overflow: hidden;
+}
+
+.header.open {
+    height: 200px; /* Expanded height to fit menu items */
+    border-radius: 14px; /* Less rounded (more rectangular) when open */
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 40px; /* Fixed height for content */
 }
 
-/* Site Name Styles */
 .site-name {
     font-size: 1.5rem;
     font-weight: 700;
@@ -69,8 +77,15 @@ body {
 
 /* Navigation Links */
 .nav-links {
-    display: flex;
-    gap: 30px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.header.open .nav-links {
+    display: flex; /* Show when header is open */
 }
 
 .nav-links a {
@@ -135,31 +150,26 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 720px) {
-    .nav-links {
-        display: none; /* Hidden by default on mobile */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.6); /* Match header background */
-        backdrop-filter: blur(12px);
-        border-radius: 0 0 28px 28px;
-        padding: 20px;
-        flex-direction: column;
-        gap: 20px;
-        opacity: 0;
-        transform: translateY(-20px); /* Start position for animation */
-        transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation */
-    }
-
-    .nav-links.open {
-        display: flex; /* Show when hamburger clicked */
-        opacity: 1;
-        transform: translateY(0); /* End position for animation */
-    }
-
     .menu-btn {
         display: block; /* Visible on mobile */
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 721px) {
+    .header {
+        height: auto;
+        border-radius: 28px; /* Stays rounded on desktop */
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        padding: 0;
+        margin-top: 0;
+    }
+    .menu-btn {
+        display: none;
     }
 }
 
