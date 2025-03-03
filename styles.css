@@ -34,42 +34,130 @@ body {
     z-index: 0;
 }
 
-nav, .hero-content {
-    position: relative;
-    z-index: 1;
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 48px);
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.2); /* Frosted glass with slight pink tint */
+    backdrop-filter: blur(12px);
+    border-radius: 28px;
+    z-index: 2; /* Above particles but below hero content */
+    padding: 10px 20px;
 }
 
-nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 20px 40px;
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #FFF;
+.logo img {
+    height: 40px; /* Adjust based on your logo size */
 }
 
-nav ul {
-    list-style: none;
+.nav-links {
     display: flex;
     gap: 30px;
 }
 
-nav a {
+.nav-links a {
     color: #FFF;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: #D7B9D5; /* Light Lavender */
+}
+
+/* Hamburger Menu Button */
+.menu-btn {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 24px;
+}
+
+.menu-btn::before,
+.menu-btn::after,
+.menu-btn span {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #FFF; /* White to match theme */
+    transition: all 0.3s ease;
+}
+
+.menu-btn::before {
+    top: 0;
+}
+
+.menu-btn span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-btn::after {
+    bottom: 0;
+}
+
+/* Hamburger to 'X' Animation */
+.menu-btn.open::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open span {
+    opacity: 0;
+}
+
+.menu-btn.open::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Styles */
+@media (max-width: 720px) {
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        border-radius: 0 0 28px 28px;
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+        opacity: 0;
+        transform: translateY(-20px); /* Start position for animation */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation */
+    }
+
+    .nav-links.open {
+        display: flex; /* Show when hamburger clicked */
+        opacity: 1;
+        transform: translateY(0); /* End position for animation */
+    }
+
+    .menu-btn {
+        display: block; /* Visible on mobile */
+    }
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h1 {
