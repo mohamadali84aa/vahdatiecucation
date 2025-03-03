@@ -3,25 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Site</title>
-    <!-- CSS will go here -->
+    <title>Cosmic Glow - Premium Cosmetics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <h1 class="logo">My Site</h1>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">Features</a>
-                <a href="#">Pricing</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </nav>
+    <!-- Hero Section with Custom Particles -->
+    <header class="hero">
+        <canvas id="particle-canvas"></canvas>
+        <nav>
+            <div class="logo">Cosmic Glow</div>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Shine Like the Stars</h1>
+            <p>Discover premium cosmetics for every glow.</p>
+            <a href="#products" class="cta">Shop Now</a>
         </div>
     </header>
-    <!-- Main content placeholder -->
-    <section class="hero">
-        <h1>Welcome to My Site</h1>
+
+    <!-- Products Section with Flip Cards -->
+    <section class="products" id="products">
+        <h2>Our Products</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Stellar Lipstick</h3>
+                        <div class="product-img" style="background-image: url('https://via.placeholder.com/300x200');"></div>
+                    </div>
+                    <div class="card-back">
+                        <p>Rich, long-lasting color</p>
+                        <p>$25</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h3>Lunar Glow Serum</h3>
+                        <div class="product-img" style="background-image: url('https://via.placeholder.com/300x200');"></div>
+                    </div>
+                    <div class="card-back">
+                        <p>Hydrates and brightens</p>
+                        <p>$45</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- About Section with Timeline -->
+    <section class="about" id="about">
+        <h2>About Cosmic Glow</h2>
+        <div class="timeline">
+            <div class="milestone" data-year="2020">Brand Launched</div>
+            <div class="milestone" data-year="2022">Global Expansion</div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Form -->
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+                <label for="email">Email</label>
+            </div>
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Cosmic Glow</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
