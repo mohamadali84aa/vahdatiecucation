@@ -47,14 +47,14 @@ body {
     border-radius: 28px; /* Highly rounded (oval-like) initially */
     z-index: 2;
     padding: 10px 20px;
-    transition: height 0.3s ease, border-radius 0.3s ease;
-    height: 60px; /* Initial height */
+    transition: height 0.8s ease, border-radius 0.3s ease;
+    height: 50px; /* Initial height */
     overflow: hidden;
 }
 
 .header.open {
     height: 200px; /* Expanded height to fit menu items */
-    border-radius: 14px; /* Less rounded (more rectangular) when open */
+    border-radius: 28px; /* Less rounded (more rectangular) when open */
 }
 
 .header-content {
@@ -67,7 +67,7 @@ body {
 .site-name {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #00bfff; /* Blue color for the site name */
+    color: #000000; /* Blue color for the site name */
     text-decoration: none;
 }
 
