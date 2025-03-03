@@ -9,6 +9,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Hamburger Menu Toggle
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuBtn.classList.remove('open');
+        });
+    });
+
     // Custom Particle Animation
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
