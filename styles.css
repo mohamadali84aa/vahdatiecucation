@@ -48,7 +48,7 @@ body {
     z-index: 2;
     padding: 10px 20px;
     transition: height 0.8s ease, border-radius 0.3s ease;
-    height: 50px; /* Initial height */
+    height: 60px; /* Initial height */
     overflow: hidden;
 }
 
