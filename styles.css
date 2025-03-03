@@ -1,0 +1,80 @@
+/* Reset default margins and ensure full height */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 80px; /* Prevents content from hiding behind fixed header */
+}
+
+/* Header styles */
+.header {
+    position: fixed; /* Stays at the top while scrolling */
+    top: 20px; /* Slight offset from the top, like Mobbin */
+    left: 50%; /* Centers horizontally */
+    transform: translateX(-50%); /* Adjusts for perfect centering */
+    width: 80%; /* Narrower than full width, like Mobbin */
+    max-width: 1000px; /* Caps width on large screens */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Internal spacing */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensures header stays above other content */
+    display: flex;
+    justify-content: center; /* Centers content inside */
+}
+
+/* Container for logo and nav */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Logo on left, nav on right */
+    align-items: center; /* Vertically centers items */
+    width: 100%;
+}
+
+/* Logo styling */
+.logo {
+    font-size: 20px;
+    color: #fff; /* White text, assuming a dark background */
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Navigation links */
+nav a {
+    color: #fff; /* White text */
+    text-decoration: none;
+    margin: 0 15px; /* Spacing between links */
+    font-size: 16px;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+nav a:hover {
+    color: #00b4d8; /* Light blue hover effect, inspired by Mobbin */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .header {
+        width: 90%; /* Slightly wider on small screens */
+        padding: 8px 15px;
+    }
+    .logo {
+        font-size: 18px; /* Smaller logo text */
+    }
+    nav a {
+        margin: 0 8px; /* Tighter spacing */
+        font-size: 14px; /* Smaller text */
+    }
+}
+
+/* Example hero section for context */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, #1a1a1a, #333); /* Dark gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
